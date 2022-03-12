@@ -3,7 +3,6 @@
     <v-list
       flat
       subheader
-      
     >
       <v-list-item-group
         multiple
@@ -18,26 +17,28 @@
             </v-list-item-action>
 
             <v-list-item-content>
-              <v-list-item-title :class="{'text-decoration-line-through':tarefa.concluido}">
-                  {{tarefa.titulo}}
+              <v-list-item-title
+                :class="{'text-decoration-line-through':tarefa.concluido}">
+                {{tarefa.titulo}}
               </v-list-item-title>
             </v-list-item-content>
 
-            <v-list-item-action @click.stop="handleDeleteTarefa(tarefa.id)">
-                <v-btn icon>
-                  <v-icon color="red lighten-1">mdi-delete-forever</v-icon>
-                </v-btn>
-              </v-list-item-action>
+            <TarefaMenu
+              :tarefa="tarefa"
+            />  
           </template>
         </v-list-item>
       </v-list-item-group>
     </v-list>
     <v-divider></v-divider>
+
   </div>
 </template>
 
 <script>
+import TarefaMenu from './TarefaMenu.vue'
 export default {
+  components: { TarefaMenu },
     name: 'Tarefa',
     props: ['tarefa'],
     methods: {

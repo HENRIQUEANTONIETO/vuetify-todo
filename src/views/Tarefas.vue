@@ -14,25 +14,27 @@
       <Tarefa
         :tarefa="tarefa"
       />   
+      <ListTarefa />
     </div>
+
   </div>
  
 </template>
 
 <script>
-
+  import ListTarefa from '../components/tarefas/ListTarefas.vue'
   import Tarefa from '../components/tarefas/Tarefa.vue' 
   export default {
-    
     name: 'Home',
     data(){
       return{
-        campoTarefa: null
+        campoTarefa: null,
       }
     },
 
     components: {
-      Tarefa  
+      Tarefa,
+      ListTarefa
     },
 
     methods:{
