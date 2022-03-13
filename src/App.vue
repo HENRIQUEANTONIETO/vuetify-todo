@@ -55,6 +55,7 @@
     </v-navigation-drawer>
 
     <v-app-bar
+      height="187"
       app
       color="#fcb69f"
       dark
@@ -71,21 +72,14 @@
 
       <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
 
-      <v-app-bar-title class="text-no-wrap">Tarefas</v-app-bar-title>
-
-      <v-spacer></v-spacer>
-
-      <v-btn icon>
-        <v-icon>mdi-magnify</v-icon>
-      </v-btn>
-
-      <v-btn icon>
-        <v-icon>mdi-heart</v-icon>
-      </v-btn>
-
-      <v-btn icon>
-        <v-icon>mdi-dots-vertical</v-icon>
-      </v-btn>
+      
+    <v-text-field
+      class="mt-16"
+      label="Qual sua tarefa?"
+      outlined
+      v-model="campoTarefa"
+      @keyup.enter="handleAddTarefa">
+      </v-text-field> 
     </v-app-bar>
 
     <v-main>
@@ -97,11 +91,20 @@
 <script>
   export default {
     data: () => ({
+      campoTarefa: null,
       drawer: null,
       items: [
           { title: 'Tarefas', icon: 'mdi-view-dashboard', to: '/' },
           { title: 'Sobre', icon: 'mdi-help-box', to: '/sobre' },
-      ], })
+      ],
+      }),
+
+    methods:{
+      handleAddTarefa(){
+        this.$store.commit('adicionarTarefa', this.campoTarefa)
+        this.campoTarefa = null
+      }
+    }  
     
   }
 </script>

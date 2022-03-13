@@ -1,16 +1,19 @@
 <template>
   <div>
-    <v-col
-          cols="12"
+    <ListTarefa />
+
+    <div v-if="this.$store.state.tarefas.length < 1">
+      <center>
+        <v-icon
+          size="200"
+          color="primary"
         >
-          <v-text-field
-            label="Qual sua tarefa?"
-            outlined
-            v-model="campoTarefa"
-            @keyup.enter="handleAddTarefa"
-          ></v-text-field>
-        </v-col> 
-       <ListTarefa />
+          mdi-check
+        </v-icon>
+        <h2>Nenhuma tarefa cadastrada</h2>
+      </center>
+      
+    </div>
   </div>
  
 </template>
@@ -19,21 +22,9 @@
   import ListTarefa from '../components/tarefas/ListTarefas.vue'
   export default {
     name: 'Home',
-    data(){
-      return{
-        campoTarefa: null,
-      }
-    },
 
     components: {
       ListTarefa
     },
-
-    methods:{
-      handleAddTarefa(){
-        this.$store.commit('adicionarTarefa', this.campoTarefa)
-        this.campoTarefa = null
-      }
-    }
   }
 </script>

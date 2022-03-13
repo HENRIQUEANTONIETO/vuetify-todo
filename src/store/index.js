@@ -5,10 +5,7 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    tarefas: [
-      {id: 1, titulo: 'Ir ao mercado', concluido: false},
-      {id: 2, titulo: 'Fazer academia', concluido: false}
-    ],
+    tarefas: [],
   },
   mutations: {
     adicionarTarefa(state, titulo){
