@@ -3,16 +3,33 @@
     <v-navigation-drawer 
       v-model="drawer"
       app>
-      <v-list-item>
-        <v-list-item-content>
-          <v-list-item-title class="text-h6">
-            Application
-          </v-list-item-title>
-          <v-list-item-subtitle>
-            subtext
-          </v-list-item-subtitle>
-        </v-list-item-content>
-      </v-list-item>
+      <v-img
+        src="./assets/bg.jpg" 
+        gradient="to top right, rgba(19,84,122,.5), rgba(28,108,199,.8)"
+        dark 
+        class="pt-5 text-center"
+      >
+        <v-avatar
+          size="100"
+        >
+          <img
+            src="./assets/perfil.jpg"
+            alt="Henrique"
+          >
+        </v-avatar>
+        <v-list-item>
+          <v-list-item-content>
+            <v-list-item-title class="text-h6">
+              Vue.js
+            </v-list-item-title>
+            <v-list-item-subtitle>
+              Lista de tarefas
+            </v-list-item-subtitle>
+          </v-list-item-content>
+        </v-list-item>
+        
+      </v-img>
+      
 
       <v-divider></v-divider>
 
