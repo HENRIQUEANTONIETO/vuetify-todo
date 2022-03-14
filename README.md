@@ -1,5 +1,8 @@
 # vue-todo
 
+## Project in Netlify
+https://myvuetifytodo.netlify.app/
+
 ## Project setup
 ```
 yarn install
